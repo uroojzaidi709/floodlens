@@ -1,0 +1,12 @@
+# Ignore large satellite data and virtual environments
+data/
+*.tif
+*.SAFE
+*.h5
+*.zip
+__pycache__/
+.env
+node_modules/
+dist/
+.venv/
+
