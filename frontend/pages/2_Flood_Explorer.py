@@ -34,11 +34,11 @@ with r1[2]:
 with r2[0]:
     display_metric_card("Built-up Flooded", fmt(lc.get("built-up"), 1), "km²", "home_work", "Buildings and settlements")
 with r2[1]:
-    display_metric_card("Roads Flooded", fmt(roads.get("road_km_flooded"), 1) if roads else "n/a", "km" if roads else "",
+    display_metric_card("Roads Flooded", fmt(roads.get("road_km_flooded"), 1) if roads else "N/A", "km" if roads else "",
                         "add_road", "OpenStreetMap roads" if roads else "OpenStreetMap not fetched yet")
 with r2[2]:
-    hs = (f"{get(fac, 'health', 'in_flood', default='n/a')} / {get(fac, 'education', 'in_flood', default='n/a')}"
-          if fac else "n/a")
+    hs = (f"{get(fac, 'health', 'in_flood', default='N/A')} / {get(fac, 'education', 'in_flood', default='N/A')}"
+          if fac else "N/A")
     display_metric_card("Hospitals / Schools", hs, "", "local_hospital",
                         "In flooded area" if fac else "OpenStreetMap not fetched yet")
 st.caption("People = WorldPop 2020 grid estimate, not a census count.")

@@ -161,7 +161,7 @@ with t1:
     with st.container(border=True):
 
         st.header("💻")
-        st.subheader("Your Name")
+        st.subheader("Abeeha")
 
         st.caption(
             "Frontend Development & Visualization"
@@ -299,9 +299,6 @@ st.write(
 st.divider()
 
 st.markdown("""
-<div style="text-align:center;padding:25px;">
-    <h2 style="color:#00B8C4;">
-        See Beyond the Surface.
     </h2>
     <p style="color:#A9BDCF;">
         Earth Observation • Artificial Intelligence
