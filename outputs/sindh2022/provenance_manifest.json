@@ -1,0 +1,259 @@
+{
+  "schema_version": "2.0",
+  "project": "FloodLens - NASA Space Apps 2026",
+  "generated_at_utc": "2026-11-15T08:08:40.926337+00:00",
+  "event_id": "sindh2022",
+  "status": "CHECKS_PASSED",
+  "sources": {
+    "pre": [
+      {
+        "sensor": "Sentinel-1",
+        "scene_id": "S1A_IW_GRDH_1SDV_20220818T012525_20220818T012550_044600_0552D9_C589",
+        "start_utc": "2022-08-18T01:25:25+00:00",
+        "track": "78",
+        "direction": "DESCENDING",
+        "frame": "pre",
+        "cycle": null,
+        "polarisation": "VV+VH"
+      },
+      {
+        "sensor": "Sentinel-1",
+        "scene_id": "S1A_IW_GRDH_1SDV_20220818T012550_20220818T012615_044600_0552D9_EDA4",
+        "start_utc": "2022-08-18T01:25:50+00:00",
+        "track": "78",
+        "direction": "DESCENDING",
+        "frame": "pre",
+        "cycle": null,
+        "polarisation": "VV+VH"
+      },
+      {
+        "sensor": "Sentinel-1",
+        "scene_id": "S1A_IW_GRDH_1SDV_20220818T012615_20220818T012640_044600_0552D9_E56B",
+        "start_utc": "2022-08-18T01:26:15+00:00",
+        "track": "78",
+        "direction": "DESCENDING",
+        "frame": "pre",
+        "cycle": null,
+        "polarisation": "VV+VH"
+      }
+    ],
+    "post": [
+      {
+        "sensor": "Sentinel-1",
+        "scene_id": "S1A_IW_GRDH_1SDV_20220830T012526_20220830T012551_044775_0558C6_9681",
+        "start_utc": "2022-08-30T01:25:26+00:00",
+        "track": "78",
+        "direction": "DESCENDING",
+        "frame": "post",
+        "cycle": null,
+        "polarisation": "VV+VH"
+      },
+      {
+        "sensor": "Sentinel-1",
+        "scene_id": "S1A_IW_GRDH_1SDV_20220830T012551_20220830T012616_044775_0558C6_E8B2",
+        "start_utc": "2022-08-30T01:25:51+00:00",
+        "track": "78",
+        "direction": "DESCENDING",
+        "frame": "post",
+        "cycle": null,
+        "polarisation": "VV+VH"
+      },
+      {
+        "sensor": "Sentinel-1",
+        "scene_id": "S1A_IW_GRDH_1SDV_20220830T012616_20220830T012641_044775_0558C6_CC82",
+        "start_utc": "2022-08-30T01:26:16+00:00",
+        "track": "78",
+        "direction": "DESCENDING",
+        "frame": "post",
+        "cycle": null,
+        "polarisation": "VV+VH"
+      }
+    ]
+  },
+  "geometry_audit": {
+    "passed": true,
+    "tracks_found": [
+      "78"
+    ],
+    "directions_found": [
+      "DESCENDING"
+    ],
+    "frames_found": [],
+    "n_pre": 3,
+    "n_post": 3,
+    "days_between_pre_and_post": 11,
+    "note": "PASS: all scenes share one track and one flight direction."
+  },
+  "terrain_qc": {
+    "max_slope_deg": 5.0,
+    "steep_pixels_quarantined": 327769
+  },
+  "parameters": {
+    "vh_water_db": -18.0,
+    "change_db": -3.0,
+    "jrc_occurrence_max": 50,
+    "max_slope_deg": 5.0,
+    "min_pixels": 5,
+    "speckle_window": 3,
+    "use_otsu": false
+  },
+  "datasets": {
+    "sentinel1": {
+      "name": "Sentinel-1 IW GRD, VV+VH (ESA Copernicus)",
+      "access": "GEE COPERNICUS/S1_GRD",
+      "role": "main flood evidence (C-band, 2022)"
+    },
+    "nisar": {
+      "name": "NISAR L2 GCOV, L-band HH/HV (NASA-ISRO)",
+      "access": "ASF DAAC, NISAR_L2_GCOV_PROVISIONAL_V1",
+      "role": "L-band comparison (2026)"
+    },
+    "jrc_surface_water": {
+      "name": "JRC Global Surface Water v1.4",
+      "access": "GEE JRC/GSW1_4/GlobalSurfaceWater",
+      "role": "remove permanent water",
+      "cite": "Pekel et al. 2016, Nature"
+    },
+    "copernicus_dem": {
+      "name": "Copernicus GLO-30 DEM",
+      "access": "GEE COPERNICUS/DEM/GLO30",
+      "role": "slope for terrain QC"
+    },
+    "worldpop": {
+      "name": "WorldPop 100 m population, 2020",
+      "access": "GEE WorldPop/GP/100m/pop",
+      "role": "people exposed"
+    },
+    "worldcover": {
+      "name": "ESA WorldCover v200",
+      "access": "GEE ESA/WorldCover/v200",
+      "role": "cropland / built-up exposed"
+    },
+    "osm": {
+      "name": "OpenStreetMap (ODbL)",
+      "access": "Overpass API via osmnx",
+      "role": "roads, hospitals, schools exposed"
+    },
+    "sen1floods11": {
+      "name": "Sen1Floods11 hand-labelled chips",
+      "access": "gs://sen1floods11",
+      "role": "train/evaluate ML",
+      "cite": "Bonafilia et al. 2020, CVPRW"
+    }
+  },
+  "artifact_sha256": {
+    "output_flood_threshold": "23cf855cdcacab94062310817eee6498ff4930ff2accb4a166bb0dc10abcc17b",
+    "output_ml_probability": "c702fef4e86dfae926f589dc4176619d51e834593770a98836a9976ade19b9dd",
+    "output_flood_ml": "cba2e8136d492b82a910a560a8aa07bc3a1627b892d1ac6ef0798e1821d499b7",
+    "output_shap_importance": "fd85113744775ac8127ed44d1dac6c1db95a1c742dd8c5f464c244ffe3e97fd1",
+    "input_scene_table": "48679667fcd5d272c9612d8dc01c3bb2d03050ab786c112077ded1962ae1608d",
+    "input_gee_stack": "f3d72b8bf8e95af705401a01b163b4e0b4c4651d8214ecc78b9dd4d784845f19",
+    "input_ml_model": "2fa021ee547f1a9cc0e035599a6d3d37143bb3abb208e91b4d6a27b07eef1c4d",
+    "input_nisar_dadu_low_signal_mask.tif": "aca9837447fcc8a4225848b71f717afa702d21f3be3eca695df3fc6137679416",
+    "input_nisar_dadu_HHHH_before_db.tif": "b02809de04eb95deacb2a5581dfd4cab098ea75abd408280279a87ea0112026b",
+    "input_nisar_dadu_HHHH_after_db.tif": "22ef2c206837f39af0422f972b83eb3bf99e96e9437d038fd63d74b5e3aeaea9",
+    "input_nisar_dadu_HHHH_change_db.tif": "3b7da9adcbea844b4461a1cc639e15f9ffa6ea8b1709755c2ae8d2d756e5fcd4",
+    "input_nisar_dadu_HVHV_before_db.tif": "c13c3a0a4cca8bcb36c1e3a2ea9a57a4a1d9cf9ea80c3c362af0daa7b7af476c",
+    "input_nisar_dadu_HVHV_after_db.tif": "55bb685dbf9f616b18ee7bab3017ec668fa3f1cbd107e5fcc4bd5935e689e4ad",
+    "input_nisar_dadu_HVHV_change_db.tif": "6c7c112e0d314d5133a1a7be5ffbfff08422d6179283767e322e9832c404228a"
+  },
+  "artifact_paths": {
+    "output_flood_threshold": "outputs\\sindh2022\\flood_threshold.tif",
+    "output_ml_probability": "outputs\\sindh2022\\ml_probability.tif",
+    "output_flood_ml": "outputs\\sindh2022\\flood_ml.tif",
+    "output_shap_importance": "outputs\\sindh2022\\shap_importance.png",
+    "input_scene_table": "data\\gee\\sindh2022_scenes.csv",
+    "input_gee_stack": "data\\gee\\sindh2022_stack.tif",
+    "input_ml_model": "ml\\flood_lgbm.joblib",
+    "input_nisar_dadu_low_signal_mask.tif": "data\\nisar_aoi\\dadu_low_signal_mask.tif",
+    "input_nisar_dadu_HHHH_before_db.tif": "data\\nisar_aoi\\dadu_HHHH_before_db.tif",
+    "input_nisar_dadu_HHHH_after_db.tif": "data\\nisar_aoi\\dadu_HHHH_after_db.tif",
+    "input_nisar_dadu_HHHH_change_db.tif": "data\\nisar_aoi\\dadu_HHHH_change_db.tif",
+    "input_nisar_dadu_HVHV_before_db.tif": "data\\nisar_aoi\\dadu_HVHV_before_db.tif",
+    "input_nisar_dadu_HVHV_after_db.tif": "data\\nisar_aoi\\dadu_HVHV_after_db.tif",
+    "input_nisar_dadu_HVHV_change_db.tif": "data\\nisar_aoi\\dadu_HVHV_change_db.tif"
+  },
+  "disclaimer": "SHA-256 shows files were not altered after this manifest was made. It does not show that the flood map is correct. Flood extent is the water seen at satellite overpass time only.",
+  "nisar": {
+    "scenes": {
+      "before": {
+        "sensor": "NISAR",
+        "scene_id": "NISAR_L2_PR_GCOV_023_092_D_075_2005_QPDH_A_20260620T141344_20260620T141418_P05023_N_F_J_001",
+        "start_utc": "2026-06-20T14:13:44+00:00",
+        "track": "092",
+        "direction": "DESCENDING",
+        "frame": "075",
+        "cycle": 23,
+        "polarisation": "QPDH"
+      },
+      "after": {
+        "sensor": "NISAR",
+        "scene_id": "NISAR_L2_PR_GCOV_029_092_D_075_2005_QPDH_A_20260831T141340_20260831T141415_P05023_N_F_J_001",
+        "start_utc": "2026-08-31T14:13:40+00:00",
+        "track": "092",
+        "direction": "DESCENDING",
+        "frame": "075",
+        "cycle": 29,
+        "polarisation": "QPDH"
+      }
+    },
+    "geometry_audit": {
+      "passed": true,
+      "tracks_found": [
+        "092"
+      ],
+      "directions_found": [
+        "DESCENDING"
+      ],
+      "frames_found": [
+        "075"
+      ],
+      "n_pre": 1,
+      "n_post": 1,
+      "days_between_pre_and_post": 71,
+      "note": "PASS: all scenes share one track and one flight direction.",
+      "nisar_cycle_check": {
+        "cycles": [
+          23,
+          29
+        ],
+        "expected_days": 72,
+        "actual_days": 71,
+        "consistent": true
+      }
+    },
+    "low_signal_mask_pct_of_aoi": 7.41,
+    "stats": {
+      "HHHH": {
+        "valid_fraction_before": 1.0,
+        "valid_fraction_after": 1.0,
+        "mean_change_db": 0.706,
+        "pct_brighter_than_plus3db": 9.98,
+        "pct_darker_than_minus3db": 3.42
+      },
+      "HVHV": {
+        "valid_fraction_before": 1.0,
+        "valid_fraction_after": 1.0,
+        "mean_change_db": 0.138,
+        "pct_brighter_than_plus3db": 2.72,
+        "pct_darker_than_minus3db": 1.07
+      }
+    },
+    "file_integrity": {
+      "all_intact": true,
+      "intact": [
+        "dadu_low_signal_mask.tif",
+        "dadu_HHHH_before_db.tif",
+        "dadu_HHHH_after_db.tif",
+        "dadu_HHHH_change_db.tif",
+        "dadu_HVHV_before_db.tif",
+        "dadu_HVHV_after_db.tif",
+        "dadu_HVHV_change_db.tif",
+        "dadu_rgb_before.png",
+        "dadu_rgb_after.png"
+      ],
+      "modified": [],
+      "missing": []
+    }
+  }
+}

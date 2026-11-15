@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FloodLens \u2014 NASA Space Apps 2026",
+  "generated_at_utc": "2026-11-14T11:01:16.935421+00:00",
+  "event_id": "sindh-2022-upper-test",
+  "forensic_status": "VERIFIED",
+  "source_acquisitions": {
+    "pre_flood": {
+      "file_name": "pre_sample.xml",
+      "sha256": "4e89cf2b430f8c6884ff5812204b0d0ecb71ff98cc807b9b70ee0d0f178676dc",
+      "mission_id": "S1A",
+      "product_type": "GRD",
+      "polarisation": "VV VH",
+      "orbit_direction": "DESCENDING",
+      "relative_orbit": "78",
+      "acquisition_start": "2022-08-30T01:18:47.123456Z",
+      "acquisition_stop": "2022-08-30T01:19:12.654321Z",
+      "incidence_angle_mid": "39.12"
+    },
+    "post_flood": {
+      "file_name": "post_sample.xml",
+      "sha256": "4e89cf2b430f8c6884ff5812204b0d0ecb71ff98cc807b9b70ee0d0f178676dc",
+      "mission_id": "S1A",
+      "product_type": "GRD",
+      "polarisation": "VV VH",
+      "orbit_direction": "DESCENDING",
+      "relative_orbit": "78",
+      "acquisition_start": "2022-08-30T01:18:47.123456Z",
+      "acquisition_stop": "2022-08-30T01:19:12.654321Z",
+      "incidence_angle_mid": "39.12"
+    }
+  },
+  "orbital_geometry_audit": {
+    "orbit_parity_verified": true,
+    "same_flight_direction": true,
+    "same_relative_orbit": true,
+    "incidence_angle_delta_deg": 0.0,
+    "audit_note": "PASS: Pre and Post acquisitions share identical orbital geometry."
+  },
+  "geophysical_quality_control": {
+    "dem_source": "Copernicus GLO-30 (30m)",
+    "slope_threshold_degrees": 15.0,
+    "radar_shadow_pixels_quarantined": 1
+  },
+  "output_artifact_checksums_sha256": {},
+  "scientific_disclaimer": "SHA-256 hashes prove bit-level file integrity and NASA/ESA sensor provenance. Observed flood extent reflects surface water at satellite overpass time only."
+}

@@ -1,0 +1,71 @@
+{
+  "event_id": "demo_synthetic",
+  "pixel_m": 30.0,
+  "crs": "EPSG:32642",
+  "shape": [
+    300,
+    300
+  ],
+  "origin_xy": [
+    400000.0,
+    3000000.0
+  ],
+  "aoi_km2": 81.0,
+  "threshold_map": {
+    "flood_km2": 16.83,
+    "funnel": {
+      "valid_pixels": 90000,
+      "dark_in_post_image": 23219,
+      "and_darker_than_before": 18700,
+      "removed_permanent_water": 0,
+      "after_permanent_water_removed": 18700,
+      "removed_steep_terrain": 0,
+      "after_terrain_qc": 18700,
+      "final_flood_pixels": 18700
+    },
+    "threshold": {
+      "threshold_db": -18.0,
+      "method": "fixed"
+    },
+    "params": {
+      "vh_water_db": -18.0,
+      "change_db": -3.0,
+      "jrc_occurrence_max": 50,
+      "max_slope_deg": 5.0,
+      "min_pixels": 5,
+      "speckle_window": 3,
+      "use_otsu": false
+    }
+  },
+  "scope": "Maps water seen at satellite overpass time. It does not forecast floods and has no ground-truth accuracy for Sindh 2022.",
+  "exposure": {
+    "map_used": "threshold",
+    "people_in_flood": 1496000,
+    "people_in_aoi": 7200000,
+    "landcover_km2": {
+      "cropland": 11.844,
+      "built-up": 4.986
+    }
+  },
+  "layers": "layers",
+  "forensics": {
+    "status": "CHECKS_PASSED",
+    "geometry_audit": {
+      "passed": true,
+      "tracks_found": [
+        "78"
+      ],
+      "directions_found": [
+        "ASCENDING"
+      ],
+      "frames_found": [],
+      "n_pre": 1,
+      "n_post": 1,
+      "days_between_pre_and_post": 108,
+      "note": "PASS: all scenes share one track and one flight direction."
+    },
+    "manifest": "provenance_manifest.json",
+    "disclaimer": "SHA-256 shows files were not altered after this manifest was made. It does not show that the flood map is correct. Flood extent is the water seen at satellite overpass time only."
+  },
+  "WARNING": "SYNTHETIC DEMO DATA - numbers are fake. For frontend development only."
+}

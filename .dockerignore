@@ -1,0 +1,16 @@
+.git
+.gitignore
+.venv
+.env
+data
+temp
+docs
+tests
+*.h5
+*.zip
+*.tif
+*.tiff
+__pycache__
+*.pyc
+.pytest_cache
+.vscode

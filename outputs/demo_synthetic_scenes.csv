@@ -1,0 +1,3 @@
+scene_id,relativeOrbitNumber_start,orbitProperties_pass,time_start_ms,role,transmitterReceiverPolarisation
+DEMO_PRE,78,ASCENDING,1652400000000,pre,VV+VH
+DEMO_POST,78,ASCENDING,1661750000000,post,VV+VH

@@ -1,0 +1,384 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+/* HOMEPAGE BASE */
+
+.stApp {
+    background-color: #050C16;
+    color: #EAF4FF;
+    font-family: 'Inter', sans-serif;
+}
+
+[data-testid="stSidebar"] {
+    display: none !important;
+}
+
+[data-testid="stSidebarCollapsedControl"] {
+    display: none !important;
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+    visibility: hidden;
+}
+
+[data-testid="stMainBlockContainer"] {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+
+/* TOP NAVIGATION */
+
+.floodlens-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+}
+
+.floodlens-brand img {
+    width: 40px;
+    height: 40px;
+}
+
+.floodlens-brand span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: #00E5FF;
+}
+
+[data-testid="stPageLink"] a {
+    color: #EAF4FF !important;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+[data-testid="stPageLink"] a:hover {
+    color: #00E5FF !important;
+    background: rgba(0, 184, 196, 0.1);
+}
+
+
+/* HERO SECTION */
+
+.hero-section {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 7%;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-eyebrow {
+    color: #00E5FF;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(48px, 6vw, 90px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -3px;
+    color: #FFFFFF;
+    margin: 0 0 25px;
+}
+
+.hero-title span {
+    color: #00E5FF;
+}
+
+.hero-description {
+    color: #C1D3E5;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 520px;
+}
+
+
+/* BUTTONS */
+
+.stButton > button {
+    background: #00B8C4;
+    color: #050C16;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 25px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    background: #00E5FF;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+}
+
+
+/* PLATFORM FEATURES */
+
+.section-heading {
+    text-align: center;
+    padding: 65px 20px 30px;
+}
+
+.section-heading p {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #00B8C4;
+}
+
+.section-heading h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    color: #EAF4FF;
+}
+
+.feature-card {
+    background: linear-gradient(
+        145deg, #14283B, #0B1726
+    );
+    border: 1px solid #24455B;
+    border-radius: 14px;
+    padding: 30px;
+    min-height: 220px;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #00B8C4;
+}
+
+.feature-number {
+    color: #00E5FF;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.feature-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #EAF4FF;
+    font-size: 24px;
+}
+
+.feature-card p {
+    color: #A9BDCF;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* FOOTER */
+
+.home-footer {
+    text-align: center;
+    border-top: 1px solid #243F56;
+    padding: 35px 20px;
+    margin-top: 70px;
+    color: #A9BDCF;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 6%;
+    }
+
+    .hero-title {
+        font-size: 48px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+}
+
+/* CINEMATIC VIDEO BACKGROUND */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 85vh;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 12, 22, 0.88),
+        rgba(5, 12, 22, 0.35),
+        rgba(5, 12, 22, 0.08)
+    );
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+.hero-description {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-video {
+        display: none;
+    }
+}
+
+
+/* ABOUT FLOODLENS SECTION */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.about-section {
+    margin-top: 80px;
+    padding: 85px 7%;
+    background: linear-gradient(
+        135deg,
+        #0B1929,
+        #050C16
+    );
+    border-top: 1px solid #24455B;
+    border-bottom: 1px solid #24455B;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.about-eyebrow {
+    color: #00E5FF;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.about-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px;
+    color: #EAF4FF;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-image {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #24455B;
+    box-shadow: 0 0 35px rgba(0, 184, 196, 0.08);
+    transition: transform 0.4s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+}
+
+.about-image-caption {
+    color: #A9BDCF;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 12px;
+}
+
+.about-content h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 3.5vw, 48px);
+    line-height: 1.2;
+    color: #EAF4FF;
+    margin: 20px 0 25px;
+}
+
+.about-content h2 span {
+    color: #00E5FF;
+}
+
+.about-content p {
+    color: #A9BDCF;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 55px;
+    padding-top: 35px;
+    border-top: 1px solid #24455B;
+    text-align: center;
+}
+
+.about-stat h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    color: #00E5FF;
+    margin: 0;
+}
+
+.about-stat p {
+    color: #A9BDCF;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image {
+        height: 320px;
+    }
+
+    .about-section {
+        padding: 50px 6%;
+    }
+
+    .about-stat h3 {
+        font-size: 28px;
+    }
+}

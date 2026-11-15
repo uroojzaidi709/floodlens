@@ -1,12 +1,16 @@
-# Ignore large satellite data and virtual environments
+.env
+*token*
+*.pem
 data/
-*.tif
-*.SAFE
 *.h5
 *.zip
+*.tif
+*.tiff
 __pycache__/
-.env
-node_modules/
-dist/
+.pytest_cache/
 .venv/
-
+*.pyc
+.vscode/
+.DS_Store
+Thumbs.db
+temp/

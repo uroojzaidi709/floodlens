@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    image: floodlens:latest
+    container_name: floodlens-app
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./outputs:/app/outputs:ro
+      - ./ml:/app/ml:ro
+
+  tests:
+    build: .
+    image: floodlens:latest
+    profiles: ["tools"]
+    command: ["python", "-m", "pytest", "-q", "tests"]
+    volumes:
+      - ./tests:/app/tests:ro

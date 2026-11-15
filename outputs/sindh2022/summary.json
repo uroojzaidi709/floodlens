@@ -1,0 +1,217 @@
+{
+  "event_id": "sindh2022",
+  "pixel_m": 30.0,
+  "crs": "EPSG:32642",
+  "shape": [
+    6319,
+    4680
+  ],
+  "origin_xy": [
+    320280.0,
+    3098520.0
+  ],
+  "aoi_km2": 26135.25,
+  "threshold_map": {
+    "flood_km2": 7907.42,
+    "funnel": {
+      "valid_pixels": 29039168,
+      "dark_in_post_image": 18939775,
+      "and_darker_than_before": 9330464,
+      "removed_permanent_water": 19082,
+      "after_permanent_water_removed": 9311382,
+      "removed_steep_terrain": 327769,
+      "after_terrain_qc": 8983613,
+      "final_flood_pixels": 8786026
+    },
+    "threshold": {
+      "threshold_db": -18.0,
+      "method": "fixed"
+    },
+    "params": {
+      "vh_water_db": -18.0,
+      "change_db": -3.0,
+      "jrc_occurrence_max": 50,
+      "max_slope_deg": 5.0,
+      "min_pixels": 5,
+      "speckle_window": 3,
+      "use_otsu": false
+    }
+  },
+  "scope": "Maps water seen at satellite overpass time. It does not forecast floods and has no ground-truth accuracy for Sindh 2022.",
+  "ml_map": {
+    "flood_km2": 14472.92,
+    "steep_pixels_removed": 1016457,
+    "agreement_with_threshold": {
+      "iou": 0.5017,
+      "only_a_pixels": 7773724,
+      "only_b_pixels": 478733,
+      "both_pixels": 8307293
+    },
+    "heldout_validation": {
+      "backend": "lightgbm",
+      "holdout_event": "Pakistan",
+      "train_events": [
+        "Bolivia",
+        "Ghana",
+        "India",
+        "Mekong",
+        "Nigeria",
+        "Paraguay",
+        "Somalia",
+        "Spain",
+        "Sri-Lanka",
+        "USA"
+      ],
+      "n_train_pixels": 1645892,
+      "ml": {
+        "precision": 0.1727,
+        "recall": 0.6727,
+        "f1": 0.2749,
+        "iou": 0.1593,
+        "accuracy": 0.7339,
+        "n_pixels": 5375862,
+        "water_fraction_true": 0.075
+      },
+      "baseline_threshold_vh_db": -18.0,
+      "baseline": {
+        "precision": 0.1207,
+        "recall": 0.7702,
+        "f1": 0.2087,
+        "iou": 0.1165,
+        "accuracy": 0.5619,
+        "n_pixels": 5375862,
+        "water_fraction_true": 0.075
+      },
+      "caveat": "Accuracy is measured on the held-out event only. Sindh 2022 has no ground truth, so no accuracy is claimed for it."
+    }
+  },
+  "explainability": {
+    "method": "shap_tree",
+    "importance": {
+      "vv_db": 1.0161340399743868,
+      "vh_db": 2.4856604555884756,
+      "vv_minus_vh": 0.037286094019205046,
+      "vh_local_std": 0.6924551100220763,
+      "vv_local_std": 0.3156898827729204
+    },
+    "per_pixel": true
+  },
+  "exposure": {
+    "map_used": "threshold",
+    "people_in_flood": 3018342,
+    "people_in_aoi": 9769978,
+    "landcover_km2": {
+      "tree": 67.9122,
+      "shrub": 272.3013,
+      "grass": 220.725,
+      "cropland": 5468.8275,
+      "built-up": 35.8182,
+      "bare": 1749.3012,
+      "water": 92.4957,
+      "wetland": 0.0423
+    }
+  },
+  "nisar": {
+    "scenes": {
+      "before": {
+        "sensor": "NISAR",
+        "scene_id": "NISAR_L2_PR_GCOV_023_092_D_075_2005_QPDH_A_20260620T141344_20260620T141418_P05023_N_F_J_001",
+        "start_utc": "2026-06-20T14:13:44+00:00",
+        "track": "092",
+        "direction": "DESCENDING",
+        "frame": "075",
+        "cycle": 23,
+        "polarisation": "QPDH"
+      },
+      "after": {
+        "sensor": "NISAR",
+        "scene_id": "NISAR_L2_PR_GCOV_029_092_D_075_2005_QPDH_A_20260831T141340_20260831T141415_P05023_N_F_J_001",
+        "start_utc": "2026-08-31T14:13:40+00:00",
+        "track": "092",
+        "direction": "DESCENDING",
+        "frame": "075",
+        "cycle": 29,
+        "polarisation": "QPDH"
+      }
+    },
+    "geometry_audit": {
+      "passed": true,
+      "tracks_found": [
+        "092"
+      ],
+      "directions_found": [
+        "DESCENDING"
+      ],
+      "frames_found": [
+        "075"
+      ],
+      "n_pre": 1,
+      "n_post": 1,
+      "days_between_pre_and_post": 71,
+      "note": "PASS: all scenes share one track and one flight direction.",
+      "nisar_cycle_check": {
+        "cycles": [
+          23,
+          29
+        ],
+        "expected_days": 72,
+        "actual_days": 71,
+        "consistent": true
+      }
+    },
+    "low_signal_mask_pct_of_aoi": 7.41,
+    "stats": {
+      "HHHH": {
+        "valid_fraction_before": 1.0,
+        "valid_fraction_after": 1.0,
+        "mean_change_db": 0.706,
+        "pct_brighter_than_plus3db": 9.98,
+        "pct_darker_than_minus3db": 3.42
+      },
+      "HVHV": {
+        "valid_fraction_before": 1.0,
+        "valid_fraction_after": 1.0,
+        "mean_change_db": 0.138,
+        "pct_brighter_than_plus3db": 2.72,
+        "pct_darker_than_minus3db": 1.07
+      }
+    },
+    "file_integrity": {
+      "all_intact": true,
+      "intact": [
+        "dadu_low_signal_mask.tif",
+        "dadu_HHHH_before_db.tif",
+        "dadu_HHHH_after_db.tif",
+        "dadu_HHHH_change_db.tif",
+        "dadu_HVHV_before_db.tif",
+        "dadu_HVHV_after_db.tif",
+        "dadu_HVHV_change_db.tif",
+        "dadu_rgb_before.png",
+        "dadu_rgb_after.png"
+      ],
+      "modified": [],
+      "missing": []
+    }
+  },
+  "layers": "layers",
+  "nisar_layers": "layers",
+  "forensics": {
+    "status": "CHECKS_PASSED",
+    "geometry_audit": {
+      "passed": true,
+      "tracks_found": [
+        "78"
+      ],
+      "directions_found": [
+        "DESCENDING"
+      ],
+      "frames_found": [],
+      "n_pre": 3,
+      "n_post": 3,
+      "days_between_pre_and_post": 11,
+      "note": "PASS: all scenes share one track and one flight direction."
+    },
+    "manifest": "provenance_manifest.json",
+    "disclaimer": "SHA-256 shows files were not altered after this manifest was made. It does not show that the flood map is correct. Flood extent is the water seen at satellite overpass time only."
+  }
+}

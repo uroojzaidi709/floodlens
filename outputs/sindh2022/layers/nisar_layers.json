@@ -1,0 +1,53 @@
+{
+  "bounds_leaflet": [
+    [
+      26.592080640162166,
+      67.62513955800003
+    ],
+    [
+      26.86541641711428,
+      67.92965359362478
+    ]
+  ],
+  "bounds_wgs84": [
+    67.62513955800003,
+    26.592080640162166,
+    67.92965359362478,
+    26.86541641711428
+  ],
+  "layers": {
+    "nisar_hh_before": {
+      "file": "nisar_hh_before.png",
+      "label": "NISAR L-band HH (before)"
+    },
+    "nisar_hh_after": {
+      "file": "nisar_hh_after.png",
+      "label": "NISAR L-band HH (after)"
+    },
+    "nisar_hh_change": {
+      "file": "nisar_hh_change.png",
+      "label": "NISAR HH change (dB): blue brighter, red darker"
+    },
+    "nisar_hv_before": {
+      "file": "nisar_hv_before.png",
+      "label": "NISAR L-band HV (before)"
+    },
+    "nisar_hv_after": {
+      "file": "nisar_hv_after.png",
+      "label": "NISAR L-band HV (after)"
+    },
+    "nisar_hv_change": {
+      "file": "nisar_hv_change.png",
+      "label": "NISAR HV change (dB): blue brighter, red darker"
+    },
+    "nisar_rgb_before": {
+      "file": "nisar_rgb_before.png",
+      "label": "NISAR RGB (before): R=HH, G=HV, B=HH/HV"
+    },
+    "nisar_rgb_after": {
+      "file": "nisar_rgb_after.png",
+      "label": "NISAR RGB (after): R=HH, G=HV, B=HH/HV"
+    }
+  },
+  "folder": "layers"
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "2.0",
+  "project": "FloodLens - NASA Space Apps 2026",
+  "generated_at_utc": "2026-11-14T20:44:05.157260+00:00",
+  "event_id": "demo_synthetic",
+  "status": "CHECKS_PASSED",
+  "sources": {
+    "pre": [
+      {
+        "sensor": "Sentinel-1",
+        "scene_id": "DEMO_PRE",
+        "start_utc": "2022-05-13T00:00:00+00:00",
+        "track": "78",
+        "direction": "ASCENDING",
+        "frame": "pre",
+        "cycle": null,
+        "polarisation": "VV+VH"
+      }
+    ],
+    "post": [
+      {
+        "sensor": "Sentinel-1",
+        "scene_id": "DEMO_POST",
+        "start_utc": "2022-08-29T05:13:20+00:00",
+        "track": "78",
+        "direction": "ASCENDING",
+        "frame": "post",
+        "cycle": null,
+        "polarisation": "VV+VH"
+      }
+    ]
+  },
+  "geometry_audit": {
+    "passed": true,
+    "tracks_found": [
+      "78"
+    ],
+    "directions_found": [
+      "ASCENDING"
+    ],
+    "frames_found": [],
+    "n_pre": 1,
+    "n_post": 1,
+    "days_between_pre_and_post": 108,
+    "note": "PASS: all scenes share one track and one flight direction."
+  },
+  "terrain_qc": {
+    "max_slope_deg": 5.0,
+    "steep_pixels_quarantined": 0
+  },
+  "parameters": {
+    "vh_water_db": -18.0,
+    "change_db": -3.0,
+    "jrc_occurrence_max": 50,
+    "max_slope_deg": 5.0,
+    "min_pixels": 5,
+    "speckle_window": 3,
+    "use_otsu": false
+  },
+  "datasets": {
+    "sentinel1": {
+      "name": "Sentinel-1 IW GRD, VV+VH (ESA Copernicus)",
+      "access": "GEE COPERNICUS/S1_GRD",
+      "role": "main flood evidence (C-band, 2022)"
+    },
+    "nisar": {
+      "name": "NISAR L2 GCOV, L-band HH/HV (NASA-ISRO)",
+      "access": "ASF DAAC, NISAR_L2_GCOV_PROVISIONAL_V1",
+      "role": "L-band comparison (2026)"
+    },
+    "jrc_surface_water": {
+      "name": "JRC Global Surface Water v1.4",
+      "access": "GEE JRC/GSW1_4/GlobalSurfaceWater",
+      "role": "remove permanent water",
+      "cite": "Pekel et al. 2016, Nature"
+    },
+    "copernicus_dem": {
+      "name": "Copernicus GLO-30 DEM",
+      "access": "GEE COPERNICUS/DEM/GLO30",
+      "role": "slope for terrain QC"
+    },
+    "worldpop": {
+      "name": "WorldPop 100 m population, 2020",
+      "access": "GEE WorldPop/GP/100m/pop",
+      "role": "people exposed"
+    },
+    "worldcover": {
+      "name": "ESA WorldCover v200",
+      "access": "GEE ESA/WorldCover/v200",
+      "role": "cropland / built-up exposed"
+    },
+    "osm": {
+      "name": "OpenStreetMap (ODbL)",
+      "access": "Overpass API via osmnx",
+      "role": "roads, hospitals, schools exposed"
+    },
+    "sen1floods11": {
+      "name": "Sen1Floods11 hand-labelled chips",
+      "access": "gs://sen1floods11",
+      "role": "train/evaluate ML",
+      "cite": "Bonafilia et al. 2020, CVPRW"
+    }
+  },
+  "artifact_sha256": {
+    "output_flood_threshold": "6053d7083739428cfde4bc6ef5109615baa0ff8ecc732ed5b5114afc8300055b",
+    "input_scene_table": "be407cc8da77ba32c13d55d21f13b723f8cb571599289c925ff35ee1d4c46815"
+  },
+  "artifact_paths": {
+    "output_flood_threshold": "/home/claude/floodlens/outputs/demo_synthetic/flood_threshold.npy",
+    "input_scene_table": "/home/claude/floodlens/outputs/demo_synthetic_scenes.csv"
+  },
+  "disclaimer": "SHA-256 shows files were not altered after this manifest was made. It does not show that the flood map is correct. Flood extent is the water seen at satellite overpass time only."
+}

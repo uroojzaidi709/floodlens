@@ -1,0 +1,37 @@
+{
+  "bounds_leaflet": [
+    [
+      26.289003899551574,
+      67.17231696134401
+    ],
+    [
+      28.011312790599888,
+      68.60616032384236
+    ]
+  ],
+  "bounds_wgs84": [
+    67.17231696134401,
+    26.289003899551574,
+    68.60616032384236,
+    28.011312790599888
+  ],
+  "layers": {
+    "s1_vh_pre": {
+      "file": "s1_vh_pre.png",
+      "label": "Sentinel-1 C-band VH (before)"
+    },
+    "s1_vh_post": {
+      "file": "s1_vh_post.png",
+      "label": "Sentinel-1 C-band VH (during flood)"
+    },
+    "flood_threshold": {
+      "file": "flood_threshold.png",
+      "label": "flood threshold"
+    },
+    "flood_ml": {
+      "file": "flood_ml.png",
+      "label": "flood ml"
+    }
+  },
+  "folder": "layers"
+}
